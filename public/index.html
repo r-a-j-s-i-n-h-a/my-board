@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+    
+    
+<body>
+    <div class="options-cont">
+        <p class="fa fa-bars"></p>
+    </div>
+    <div class="tools-cont scale-tools">
+        <img class="pencil" src="./icons/pencil.png" alt="">
+        <img  class="eraser" src="./icons/eraser.png" alt="">
+        <img class="download" src="./icons/download.png" alt="">
+        <img class="upload" src="./icons/upload.png" alt="">
+        <img class="sticky" src="./icons/notes.png" alt="">
+        <img class="redo" src="./icons/redo.png" alt="">
+        <img class="undo" src="./icons/undo.png" alt="">
+    </div>
+    <div class="pencil-tool-cont">
+        <div class="pencil-width-cont">
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+        <div class="pencil-color-cont" id="penc">
+            <div class="black pencil-color" id="black"></div>
+            <div class="blue pencil-color" id="blue"></div>
+            <div class="red pencil-color" id="red"></div>
+
+        </div>
+    </div>
+
+
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="10" value="3"  class="eraser-width">
+    </div>
+    <div class="sticky-cont">
+    </div>
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script>
+        let socket=io.connect("http://localhost:5000");
+    </script>
+    <script src="./tools.js"></script>
+    <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+    <script src="https://kit.fontawesome.com/4ea6e3ab0b.js" crossorigin="anonymous"></script>
+    <script src="./canvas.js"></script>
+</body>
+</html>
