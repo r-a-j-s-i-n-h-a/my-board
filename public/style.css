@@ -127,6 +127,7 @@ img {
   display: flex;
   justify-content: right;
   align-items: center;
+  width: 30rem;
   
 }
 .header-cont >*{
@@ -147,9 +148,9 @@ img {
   
 }
 .note-cont{
-  height:13rem;
+  height:20rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  width: 25rem;
   
 }
 textarea{
@@ -158,6 +159,7 @@ textarea{
   outline: none;
   border: none;
   resize: none;
+  
 }
 
 
