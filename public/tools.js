@@ -58,21 +58,29 @@ let input = document.createElement("input");
 input.setAttribute("type","file");
 input.click();
 
-input.addEventListener("change",(e)=>{
-  let file=input.files[0];
-  let url=URL.createObjectURL(file);
-  let stickyTemplateHTML=`
-  <div class="header-cont">
-<div class="minimize"></div>
-<div class="remove"></div>
-</div>
-<div class="note-cont">
-<img src="${url}"> </img>
+input.addEventListener("change", (e) => {
+  const fileInput = e.target;
+  
+  if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      const url = URL.createObjectURL(file);
 
-</div>
-  `;
-  createSticky(stickyTemplateHTML);
-})
+      let stickyTemplateHTML = `
+          <div class="header-cont">
+              <div class="minimize"></div>
+              <div class="remove"></div>
+          </div>
+           <div class="note-cont">
+              <img src="${url}" style="width: 30rem; height: 20rem;"></img>
+          </div>
+      `;
+
+      createSticky(stickyTemplateHTML);
+  } else {
+      console.error("No file selected");
+  }
+});
+
 })
 
 
@@ -95,6 +103,7 @@ function createSticky(stickyTemplateHTML){
   let stickyCont = document.createElement("div");
   stickyCont.setAttribute("class", "sticky-cont");
   stickyCont.innerHTML = stickyTemplateHTML;
+  
 
 document.body.appendChild(stickyCont);
 let minimize=stickyCont.querySelector(".minimize");
