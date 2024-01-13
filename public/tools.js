@@ -67,7 +67,7 @@ input.addEventListener("change",(e)=>{
 <div class="remove"></div>
 </div>
 <div class="note-cont">
-<img src=${url}"> </img>
+<img src="${url}"> </img>
 
 </div>
   `;
